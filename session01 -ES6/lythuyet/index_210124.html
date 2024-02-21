@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //hoisting - let & const
+    let a;
+    console.log(`Defind type of a: ${a}`);
+    a = 8;
+    
+    //Toan tu spread
+    let obj = {
+        name:"an" ,
+        age: 22
+    }
+    let obj2 = obj;
+
+    obj.name = "binh";
+    console.log(`Ket qua: ${obj2.name}`);
+    let a1 = 2;
+    let b = a1;
+    a1 = 3;
+    console.log(`Ket qua: ${b}`);
+
+    let arr = [
+        {
+            name: "canh",
+            age: 23
+        },
+        {
+            name: "duy",
+            age: 24
+        }
+    ];
+    let arr1 = {...arr};
+    arr[0] = 5;
+    console.log(`arr: ${arr}`);
+    console.log(`arr: ${arr1}`);
+
+    //Destructoring
+    let obj1 = {
+        name: "Thuy",
+        age: 20
+    };
+    let array = [6,7];
+
+    const {name , age} = obj1;
+    const [a2 , b2] = array;
+
+    console.log(a2 , b2);
+    //Arrow function
+    let arrow = a => a + 4;
+    console.log(`Sum: ${arrow(1,2)}`);
+
+    //Class
+    let objA , objB;
+    objA = {
+        name: 'Trang',
+        age: 24
+    };
+    objB = {
+        name: 'Thao',
+        age: 25
+    };
+
+    function Person(name , age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    let std1 = new Person('Nhung' , 22);
+    let std2 = new Person('Hanh' , 21);
+    console.log(std1 , std2);
+
+    class Student{
+        constructor(name , age){
+            this.name = name;
+            this.age = age;
+        }
+        sayHello(){
+            console.log("Xin chao" , this);
+        }
+        sayName = ()=>{
+            console.log("Xin chao" , this);
+        }
+    };
+    let std3 = new Student('Hung' , 19);
+    let std4 = new Student('Huy' , 18);
+    console.log(std3.sayHello());
+    console.log(std4.sayName());
+
+    //Import / Export
+
+    //Built-in
+    let text = "Hello world , welcome to the universe";
+    let result = text.startsWith('welcome');
+    console.log('Ket qua Built-in: ' + result);
+
+    //Enhance
+    let fullName = "Nguyen Huy";
+    let nage = 20;
+    let objj = {
+        fullName , 
+        nage
+    }
+    console.log(objj);
+</script>
+<script src="import.js" type="module"></script>
+</html>

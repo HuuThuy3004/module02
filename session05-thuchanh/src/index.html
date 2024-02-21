@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="email" placeholder="email" />
+    <input type="text" id="pass" placeholder="password" />
+    <button onclick="login()"></button>
+  </body>
+  <script>
+    let products = [],
+      category = [],
+      users;
+    users = [
+      {
+        name: "Chung",
+        pass: "12344",
+        email: "chung@gmail.com",
+      },
+      {
+        name: "Khang",
+        pass: "12345",
+        email: "khang@gmail.com",
+      },
+    ];
+
+    function login() {
+      let email = "chung@gmail.com";
+      let pass = "12344";
+      let check = false;
+
+      for (let i in users) {
+        if (users[i].email == email && users[i].pass == pass) {
+          console.log("Email giong nhau");
+          console.log("Pass giong nhau");
+          check = true;
+        }
+      }
+      if (check) {
+        console.log("Ban nhap dung!!");
+      }
+      else if (check == false) {
+        console.log("Ban nhap sai!!");
+      }
+      else {
+        console.log("Moi ban nhap du lieu");
+      }
+    }
+  </script>
+</html>
